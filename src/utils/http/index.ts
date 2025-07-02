@@ -15,11 +15,11 @@ interface ExtendedAxiosRequestConfig extends AxiosRequestConfig {
   showErrorMessage?: boolean
 }
 
-const { VITE_API_URL, VITE_WITH_CREDENTIALS } = import.meta.env
+const { VITE_WITH_CREDENTIALS } = import.meta.env
 
 const axiosInstance = axios.create({
   timeout: REQUEST_TIMEOUT, // 请求超时时间(毫秒)
-  baseURL: VITE_API_URL, // API地址
+  baseURL: '/api', // API地址
   withCredentials: VITE_WITH_CREDENTIALS === 'true', // 是否携带cookie，默认关闭
   transformRequest: [(data) => JSON.stringify(data)], // 请求数据转换为 JSON 字符串
   validateStatus: (status) => status >= 200 && status < 300, // 只接受 2xx 的状态码
