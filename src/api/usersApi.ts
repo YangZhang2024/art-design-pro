@@ -4,7 +4,7 @@ export class UserService {
   // 登录
   static login(params: Api.Auth.LoginParams) {
     return request.post<Api.Auth.LoginResponse>({
-      url: '/api/auth/login',
+      url: '/api/user/login',
       params
       // showErrorMessage: false // 不显示错误消息
     })
