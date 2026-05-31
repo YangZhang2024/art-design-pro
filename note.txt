@@ -1,0 +1,6 @@
+
+1. 新功能的流程
+    定义类型 (api.d.ts) → 写 API 函数 (api/*.ts) → 加 mock 数据(可选)
+    → 建页面目录 (index.vue + search + dialog)
+    → 注册路由 + 加国际化 key
+    → 后端加一个 router 文件
