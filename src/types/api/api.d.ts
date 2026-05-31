@@ -85,6 +85,48 @@ declare namespace Api {
     }
   }
 
+  /** 客户管理类型 */
+  namespace CustomerManage {
+    /** 客户列表 */
+    type CustomerList = Api.Common.PaginatedResponse<CustomerListItem>
+
+    /** 客户列表项 */
+    interface CustomerListItem {
+      id: number
+      name: string
+      contactName: string
+      phone: string
+      email: string
+      status: string
+      address: string
+      remark: string
+      createdAt: string
+      updatedAt: string
+    }
+
+    /** 客户搜索参数 */
+    type CustomerSearchParams = Partial<
+      Pick<CustomerListItem, 'name' | 'status'> &
+        Api.Common.CommonSearchParams & {
+          startTime: string | null
+          endTime: string | null
+        }
+    >
+
+    /** 新增客户参数 */
+    interface CustomerCreateParams {
+      name: string
+      contactName: string
+      phone: string
+      email: string
+      address: string
+      remark: string
+    }
+
+    /** 编辑客户参数 */
+    type CustomerUpdateParams = CustomerCreateParams & { id: number }
+  }
+
   /** 系统管理类型 */
   namespace SystemManage {
     /** 用户列表 */

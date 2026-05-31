@@ -61,6 +61,17 @@ export const systemRoutes: AppRouteRecord = {
       }
     },
     {
+      path: 'customer',
+      name: 'Customer',
+      component: '/system/customer',
+      meta: {
+        title: 'menus.system.customer',
+        icon: 'ri:contacts-line',
+        keepAlive: true,
+        roles: ['R_SUPER', 'R_ADMIN']
+      }
+    },
+    {
       path: 'nested',
       name: 'Nested',
       component: '',
